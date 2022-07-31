@@ -1,7 +1,7 @@
 import React from "react";
 import "./LoadingCircle.css";
 import { useEffect, useState, useContext } from "react";
-import { damascusProgress } from "../damascusContext";
+import { damascusProgress } from "../../damascusContext";
 
 function LoadingCircle(demascusPercent) {
   //SIZE DRAGGER
