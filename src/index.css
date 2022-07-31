@@ -1,13 +1,235 @@
+html {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+  font-size: 35px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+* {
+  font-family: "Teko", sans-serif;
+}
+
+.navbar-class {
+  border-bottom: 1px solid black;
+}
+
+/* --- AR_list.jsx --- */
+
+.gun-grid img {
+  height: 300px;
+  width: 600px;
+  position: relative;
+}
+
+.gun-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* --- CamoList.jsx --- */
+
+.gold-active {
+  display: none;
+}
+
+.checkmarkSand {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
+}
+
+.checkmarkTiger {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
+}
+
+.checkmarkJungle {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
+}
+
+.checkmarkSplinter {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
+}
+
+.checkmarkReptile {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
+}
+
+.checkmarkDragon {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
+}
+
+.nocheckmark {
+  visibility: hidden;
+}
+
+.collection {
+  position: relative;
+  color: white;
+  display: flex;
+  margin-left: 100px;
+}
+
+.active {
+  border: 2px solid red;
+  opacity: 50%;
+}
+
+.collection > :hover {
+  transform: scale(1.5);
+  transition: ease-in-out;
+}
+
+.collection #gold {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-color: gold;
+}
+
+.collection #platinum {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-color: silver;
+}
+
+.collection #demas {
+  height: 50px;
+  width: 50px;
+  background-image: url(https://i.imgur.com/PKzYg4x.png);
+}
+
+.collection #sand {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-image: url(https://i.imgur.com/LEZeU2t.png);
+}
+
+.collection #dragon {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-image: url(https://i.imgur.com/JTBFsB9.png);
+}
+
+.collection #splinter {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-image: url(https://i.imgur.com/P5hODp5.png);
+}
+
+.collection #tiger {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-image: url(https://i.imgur.com/f8BimaK.png);
+}
+
+.collection #jungle {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-image: url(https://i.imgur.com/wLLV7ty.png);
+}
+
+.collection #reptile {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  background-image: url(https://i.imgur.com/GOCuOUA.png);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+.tooltip-hidden {
+  display: none;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  border: 1px solid yellow;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 999;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.collection #sand:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.collection #jungle:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.collection #splinter:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.collection #reptile:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.collection #tiger:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.collection #dragon:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+
+/* --- LoadingCircle.jsx --- */

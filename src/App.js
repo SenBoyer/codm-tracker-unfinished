@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./Navbar";
+import AR_LIST from "./Guns/AR/AR_list";
+import { useState } from "react";
+import LoadingCircle from "./Guns/Completion/LoadingCircle";
+import damascusProgressProvider from "./damascusContext";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <damascusProgressProvider>
+        <Navbar />
+        <LoadingCircle />
+        <div>
+          <h1>Weapons</h1>
+          <AR_LIST />
+        </div>
+        <div>
+          <h1>Medals</h1>
+        </div>
+      </damascusProgressProvider>
     </div>
   );
 }
