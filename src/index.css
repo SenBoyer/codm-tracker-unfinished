@@ -45,7 +45,7 @@ code {
 /* --- CamoList.jsx --- */
 
 .gold-active {
-  display: none;
+  background-image: url(https://i.imgur.com/fWPKxJZ.png)
 }
 
 .checkmarkSand {
@@ -115,7 +115,7 @@ code {
   height: 50px;
   width: 50px;
   margin-right: 5px;
-  background-color: gold;
+  background-image: url(https://i.imgur.com/KwWipyy.png);
 }
 
 .collection #platinum {

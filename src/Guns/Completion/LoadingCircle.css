@@ -27,12 +27,12 @@
   width: 122px;
   height: 122px;
   border-radius: 50%;
-  background: black;
+  background-image: url(https://i.imgur.com/pWLeYNp.jpg);
   line-height: 120px;
   text-align: center;
   margin-top: 14px;
   margin-left: 14px;
-  color: #1e51dc;
+  color: yellow;
   position: absolute;
   z-index: 100;
   font-weight: 700;
@@ -44,7 +44,8 @@
 /* 3rd progress bar */
 .mask .fill {
   clip: rect(0px, 75px, 150px, 0px);
-  background-color: red;
+  background: yellow;
+  border: 1px solid black;
 }
 
 .mask.full,

@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { FaCheck } from "react-icons/fa";
 import React from "react";
+import { damascusProgress } from "../../damascusContext";
 
 export default function CamoList({ damascusPercent, setDamascusPercent }) {
   const [sandIsActive, setSandActive] = useState(false);
@@ -11,13 +12,14 @@ export default function CamoList({ damascusPercent, setDamascusPercent }) {
   const [jungleIsActive, setJungleActive] = useState(false);
   const [totalCamo, setTotalCamo] = useState(0);
   const [goldCamo, setGoldCamo] = useState(false);
-  const [goldCount, setGoldCount] = useState(0);
+  let { count, setCount } = useContext(damascusProgress);
 
   const handleSandClick = (event) => {
     // 👇️ toggle isActive state on click
     setSandActive((current) => !current);
     if (sandIsActive) {
       setTotalCamo((prev) => prev - 1);
+      console.log("count=", count);
     } else {
       setTotalCamo((prev) => prev + 1);
     }
@@ -75,11 +77,11 @@ export default function CamoList({ damascusPercent, setDamascusPercent }) {
 
   useEffect(() => {
     if (totalCamo === 6) {
-      console.log("useEffect running on 6");
       setGoldCamo((current) => !current);
       setDamascusPercent((prev) => prev + 1);
       setTotalCamo((prev) => prev + 1);
-      setGoldCount((prev) => prev + 1);
+      setCount((prev) => prev + 4.8);
+      updateFill();
     }
 
     function updateFill() {
@@ -91,7 +93,7 @@ export default function CamoList({ damascusPercent, setDamascusPercent }) {
     }
 
     updateFill();
-  }, [totalCamo, goldCount]);
+  }, [totalCamo]);
 
   // function makeSizer(size) {
   //   return function () {

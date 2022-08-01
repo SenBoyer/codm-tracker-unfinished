@@ -35,7 +35,7 @@ function LoadingCircle(demascusPercent) {
         <div className="mask half">
           <div className="fill"></div>
         </div>
-        <div className="inside-circle"> {count} </div>
+        <div className="inside-circle"> {Math.round(count * 100) / 100}% </div>
       </div>
     </div>
 

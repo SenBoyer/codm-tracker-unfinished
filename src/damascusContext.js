@@ -1,11 +1,14 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const damascusProgress = createContext();
 
-const damascusProgressProvider = function ({ children }) {
+const DamascusProgressProvider = ({ children }) => {
+  const [count, setCount] = useState(0);
   return (
-    <damascusProgressProvider.Provider value={{ count: 1 }}>
+    <damascusProgress.Provider value={{ count, setCount }}>
       {children}
-    </damascusProgressProvider.Provider>
+    </damascusProgress.Provider>
   );
 };
+
+export default DamascusProgressProvider;
