@@ -71,7 +71,14 @@ export const useGetCompletionData = () => {
   };
 
   const setAllCamos = (event) => {
-    setTotalCamo((prev) => prev + 1);
+    console.log("set all camos start");
+    setReptileActive((current) => !current);
+    setSandActive((current) => !current);
+    setTigerActive((current) => !current);
+    setJungleActive((current) => !current);
+    setDragonActive((current) => !current);
+    setTotalCamo((prev) => prev + 6);
+    console.log("set all camos finished");
   };
 
   return {
