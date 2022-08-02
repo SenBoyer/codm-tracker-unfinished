@@ -1,16 +1,22 @@
 import React from "react";
 import CamoList from "../Completion/CamoList";
 import { useState } from "react";
+import { useGetCompletionData } from "../../hooks/getInfo";
 
 export default function AR_LIST() {
   const [damascusPercent, setDamascusPercent] = useState(0);
+  let { setAllCamos } = useGetCompletionData();
   return (
     <>
       <h1>Assault Rifle</h1>
       <div className="gun-grid">
         <div>
           <h1>ASM10</h1>
-          <img src="https://i.imgur.com/4rk88oj.jpg" alt="ASM10" />
+          <img
+            src="https://i.imgur.com/4rk88oj.jpg"
+            alt="ASM10"
+            onDoubleClick={setAllCamos}
+          />
           <CamoList
             damascusPercent={damascusPercent}
             setDamascusPercent={setDamascusPercent}

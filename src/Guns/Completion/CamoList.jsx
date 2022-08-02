@@ -1,83 +1,34 @@
 import { useState, useEffect, useContext } from "react";
 import { FaCheck } from "react-icons/fa";
 import React from "react";
+import { useGetCompletionData } from "../../hooks/getInfo";
 import { damascusProgress } from "../../damascusContext";
 
 export default function CamoList({ damascusPercent, setDamascusPercent }) {
-  const [sandIsActive, setSandActive] = useState(false);
-  const [dragonIsActive, setDragonActive] = useState(false);
-  const [splinterIsActive, setSplinterActive] = useState(false);
-  const [tigerIsActive, setTigerActive] = useState(false);
-  const [reptileIsActive, setReptileActive] = useState(false);
-  const [jungleIsActive, setJungleActive] = useState(false);
-  const [totalCamo, setTotalCamo] = useState(0);
-  const [goldCamo, setGoldCamo] = useState(false);
-  let { count, setCount } = useContext(damascusProgress);
+  const {
+    goldIsActive,
+    setGoldActive,
+    totalCamo,
+    setTotalCamo,
+    sandIsActive,
+    handleSandClick,
+    handleDragonClick,
+    dragonIsActive,
+    splinterIsActive,
+    handleSplinterClick,
+    tigerIsActive,
+    handleTigerClick,
+    handleReptileClick,
+    reptileIsActive,
+    jungleIsActive,
+    handleJungleClick,
+  } = useGetCompletionData();
 
-  const handleSandClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setSandActive((current) => !current);
-    if (sandIsActive) {
-      setTotalCamo((prev) => prev - 1);
-      console.log("count=", count);
-    } else {
-      setTotalCamo((prev) => prev + 1);
-    }
-  };
-
-  const handleDragonClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setDragonActive((current) => !current);
-    if (dragonIsActive) {
-      setTotalCamo((prev) => prev - 1);
-    } else {
-      setTotalCamo((prev) => prev + 1);
-    }
-  };
-
-  const handleSplinterClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setSplinterActive((current) => !current);
-    if (splinterIsActive) {
-      setTotalCamo((prev) => prev - 1);
-    } else {
-      setTotalCamo((prev) => prev + 1);
-    }
-  };
-
-  const handleTigerClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setTigerActive((current) => !current);
-    if (tigerIsActive) {
-      setTotalCamo((prev) => prev - 1);
-    } else {
-      setTotalCamo((prev) => prev + 1);
-    }
-  };
-
-  const handleReptileClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setReptileActive((current) => !current);
-    if (reptileIsActive) {
-      setTotalCamo((prev) => prev - 1);
-    } else {
-      setTotalCamo((prev) => prev + 1);
-    }
-  };
-
-  const handleJungleClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setJungleActive((current) => !current);
-    if (jungleIsActive) {
-      setTotalCamo((prev) => prev - 1);
-    } else {
-      setTotalCamo((prev) => prev + 1);
-    }
-  };
+  let { setCount } = useContext(damascusProgress);
 
   useEffect(() => {
     if (totalCamo === 6) {
-      setGoldCamo((current) => !current);
+      setGoldActive((current) => !current);
       setDamascusPercent((prev) => prev + 1);
       setTotalCamo((prev) => prev + 1);
       setCount((prev) => prev + 4.8);
@@ -94,14 +45,6 @@ export default function CamoList({ damascusPercent, setDamascusPercent }) {
 
     updateFill();
   }, [totalCamo]);
-
-  // function makeSizer(size) {
-  //   return function () {
-  //     document.documentElement.style.setProperty(
-  //       "--circle-radius",
-  //       `${newPixel}deg`)
-  //   };
-  // }
 
   return (
     <div className="collection">
@@ -178,7 +121,12 @@ export default function CamoList({ damascusPercent, setDamascusPercent }) {
           className={reptileIsActive ? "checkmarkReptile" : "nocheckmark"}
         />
       </div>
-      <div id="gold" className={goldCamo ? "gold-active" : ""}></div>
+      <div id="gold" className={goldIsActive ? "gold-active" : ""}>
+        <div className={goldIsActive ? "tooltip-hidden" : "tooltip"}>
+          <span className="tooltiptext">Unlock all previous camos</span>
+        </div>
+        <FaCheck className={goldIsActive ? "checkmarkGold" : "nocheckmark"} />
+      </div>
       <div id="platinum"></div>
       <div id="demas"></div>
     </div>

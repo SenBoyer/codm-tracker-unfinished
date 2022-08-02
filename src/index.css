@@ -44,8 +44,11 @@ code {
 
 /* --- CamoList.jsx --- */
 
-.gold-active {
-  background-image: url(https://i.imgur.com/fWPKxJZ.png)
+.checkmarkGold {
+  visibility: visible;
+  font-size: 35px;
+  padding-top: 7px;
+  color: red;
 }
 
 .checkmarkSand {
@@ -229,6 +232,10 @@ code {
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .collection #dragon:hover .tooltip .tooltiptext {
+  visibility: visible;
+}
+
+.collection #gold:hover .tooltip .tooltiptext {
   visibility: visible;
 }
 
