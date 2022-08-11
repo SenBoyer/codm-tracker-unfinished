@@ -72,7 +72,6 @@ export default function CamoList({
           <h2 ref={goldEffectRef}>Gold Unlocked</h2>
         </div>
         <div className="collection">
-          <p>{damascusPercent}</p>
           <div
             id="sand"
             className={sandIsActive ? "active" : ""}

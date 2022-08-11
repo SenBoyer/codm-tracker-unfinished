@@ -59,10 +59,17 @@ code {
 }
 
 h2{
-  color: red;
+  color: gold;
   position: relative;
   top: -165px;
   font-size: 50px;
+  opacity: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 /* --- CamoList.jsx --- */
 
@@ -123,7 +130,7 @@ h2{
   position: relative;
   color: white;
   display: flex;
-  margin-left: 27px;
+  margin-left: 34px;
   top: 70px;
 }
 

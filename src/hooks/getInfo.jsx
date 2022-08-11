@@ -110,7 +110,7 @@ export const useGetCompletionData = () => {
     } else {
       gsap.fromTo(
         goldEffectRef.current,
-        { opacity: 1, display: "block" },
+        { opacity: 1, duration: 1 },
         { opacity: 0, duration: 1 }
       );
       console.log("set all camos start");
