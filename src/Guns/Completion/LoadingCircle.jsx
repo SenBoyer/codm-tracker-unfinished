@@ -3,7 +3,7 @@ import "./LoadingCircle.css";
 import { useEffect, useState, useContext } from "react";
 import { damascusProgress } from "../../damascusContext";
 
-function LoadingCircle(demascusPercent) {
+function LoadingCircle({ demascusPercent }) {
   //SIZE DRAGGER
   // const [size, setSize] = useState();
 
@@ -24,7 +24,7 @@ function LoadingCircle(demascusPercent) {
   //   console.log(color);
   // }, [size]);
 
-  let { count } = useContext(damascusProgress);
+  let { count, damascusPercent } = useContext(damascusProgress);
 
   return (
     <div className="circle-wrap">

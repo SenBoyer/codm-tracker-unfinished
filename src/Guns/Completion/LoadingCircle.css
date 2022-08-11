@@ -32,7 +32,7 @@
   text-align: center;
   margin-top: 14px;
   margin-left: 14px;
-  color: yellow;
+  color: #dede01;
   position: absolute;
   z-index: 100;
   font-weight: 700;
@@ -44,8 +44,7 @@
 /* 3rd progress bar */
 .mask .fill {
   clip: rect(0px, 75px, 150px, 0px);
-  background: yellow;
-  border: 1px solid black;
+  background: #dede01;
 }
 
 .mask.full,

@@ -4,7 +4,7 @@ html {
 
 h1 {
   color: white;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 body {
@@ -25,71 +25,93 @@ code {
   font-family: "Teko", sans-serif;
 }
 
+/* Navbar.jsx */
+
 .navbar-class {
   border-bottom: 1px solid black;
 }
 
-/* --- AR_list.jsx --- */
-
-.gun-grid img {
-  height: 300px;
-  width: 600px;
-  position: relative;
+.navbar-class img {
+  height: 150px;
 }
+
+
+
+/* --- AR_list.jsx --- */
 
 .gun-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 50px;
 }
 
+.gun-name-image {
+  height: 175px;
+}
+
+.gun-name-image img{
+  height: 175px;
+  width: 350px;
+}
+
+.gun-grid #title {
+  position: absolute;
+}
+
+h2{
+  color: red;
+  position: relative;
+  top: -165px;
+  font-size: 50px;
+}
 /* --- CamoList.jsx --- */
 
 .checkmarkGold {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
 .checkmarkSand {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
 .checkmarkTiger {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
 .checkmarkJungle {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
 .checkmarkSplinter {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
 .checkmarkReptile {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
 .checkmarkDragon {
   visibility: visible;
-  font-size: 35px;
-  padding-top: 7px;
+  font-size: 30px;
+  padding-top: 4px;
   color: red;
 }
 
@@ -101,7 +123,8 @@ code {
   position: relative;
   color: white;
   display: flex;
-  margin-left: 100px;
+  margin-left: 27px;
+  top: 70px;
 }
 
 .active {
@@ -110,68 +133,68 @@ code {
 }
 
 .collection > :hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
   transition: ease-in-out;
 }
 
 .collection #gold {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/KwWipyy.png);
 }
 
 .collection #platinum {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-color: silver;
 }
 
 .collection #demas {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   background-image: url(https://i.imgur.com/PKzYg4x.png);
 }
 
 .collection #sand {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/LEZeU2t.png);
 }
 
 .collection #dragon {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/JTBFsB9.png);
 }
 
 .collection #splinter {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/P5hODp5.png);
 }
 
 .collection #tiger {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/f8BimaK.png);
 }
 
 .collection #jungle {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/wLLV7ty.png);
 }
 
 .collection #reptile {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   margin-right: 5px;
   background-image: url(https://i.imgur.com/GOCuOUA.png);
 }
