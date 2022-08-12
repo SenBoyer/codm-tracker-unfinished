@@ -16,7 +16,6 @@ export default function CamoList({
     goldIsActive,
     setGoldActive,
     totalCamo,
-    setTotalCamo,
     sandIsActive,
     handleSandClick,
     handleDragonClick,
@@ -47,6 +46,11 @@ export default function CamoList({
       setGoldActive(true);
       setDamascusPercent((prev) => prev + 1);
       setCount((prev) => prev + 4.8);
+      gsap.fromTo(
+        goldEffectRef.current,
+        { opacity: 1, duration: 1 },
+        { opacity: 0, duration: 2 }
+      );
       updateFill();
     } else {
       setGoldActive(false);
@@ -69,7 +73,9 @@ export default function CamoList({
         <div className="gun-name-image">
           <h1>{gunName}</h1>
           <img src={gunImage} alt={gunName} onDoubleClick={setAllCamos}></img>
-          <h2 ref={goldEffectRef}>Gold Unlocked</h2>
+          <h2 ref={goldEffectRef} onDoubleClick={setAllCamos}>
+            Gold Unlocked
+          </h2>
         </div>
         <div className="collection">
           <div
@@ -161,7 +167,6 @@ export default function CamoList({
             />
           </div>
           <div id="platinum"></div>
-          <div id="demas"></div>
         </div>
       </div>
     </>

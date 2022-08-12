@@ -105,8 +105,44 @@ export const useGetCompletionData = () => {
   };
 
   const setAllCamos = (event) => {
-    if (totalCamo === 1) {
+    if (
+      camoArrayList.includes("Sand") &&
+      camoArrayList.includes("Jungle") &&
+      camoArrayList.includes("Tiger") &&
+      camoArrayList.includes("Dragon") &&
+      camoArrayList.includes("Splinter") &&
+      camoArrayList.includes("Reptile")
+    ) {
+      setSandActive(false);
+      setTotalCamo((prev) => prev - 1);
+      setCamoArrayList((prev_array) =>
+        prev_array.filter((item) => item !== "Sand")
+      );
+      setDragonActive(false);
+      setTotalCamo((prev) => prev - 1);
+      setCamoArrayList((prev_array) =>
+        prev_array.filter((item) => item !== "Dragon")
+      );
+      setSplinterActive(false);
+      setTotalCamo((prev) => prev - 1);
+      setCamoArrayList((prev_array) =>
+        prev_array.filter((item) => item !== "Splinter")
+      );
+      setTigerActive(false);
+      setTotalCamo((prev) => prev - 1);
+      setCamoArrayList((prev_array) =>
+        prev_array.filter((item) => item !== "Tiger")
+      );
       setJungleActive(false);
+      setTotalCamo((prev) => prev - 1);
+      setCamoArrayList((prev_array) =>
+        prev_array.filter((item) => item !== "Jungle")
+      );
+      setReptileActive(false);
+      setTotalCamo((prev) => prev - 1);
+      setCamoArrayList((prev_array) =>
+        prev_array.filter((item) => item !== "Reptile")
+      );
     } else {
       gsap.fromTo(
         goldEffectRef.current,
@@ -114,12 +150,24 @@ export const useGetCompletionData = () => {
         { opacity: 0, duration: 1 }
       );
       console.log("set all camos start");
-      handleSandClick();
-      handleDragonClick();
-      handleSplinterClick();
-      handleTigerClick();
-      handleJungleClick();
-      handleReptileClick();
+      setSandActive(true);
+      setTotalCamo((prev) => prev + 1);
+      setCamoArrayList((prev) => [...prev, "Sand"]);
+      setDragonActive(true);
+      setTotalCamo((prev) => prev + 1);
+      setCamoArrayList((prev) => [...prev, "Dragon"]);
+      setSplinterActive(true);
+      setTotalCamo((prev) => prev + 1);
+      setCamoArrayList((prev) => [...prev, "Splinter"]);
+      setTigerActive(true);
+      setTotalCamo((prev) => prev + 1);
+      setCamoArrayList((prev) => [...prev, "Tiger"]);
+      setJungleActive(true);
+      setTotalCamo((prev) => prev + 1);
+      setCamoArrayList((prev) => [...prev, "Jungle"]);
+      setReptileActive(true);
+      setTotalCamo((prev) => prev + 1);
+      setCamoArrayList((prev) => [...prev, "Reptile"]);
       console.log("set all camos finished");
     }
   };

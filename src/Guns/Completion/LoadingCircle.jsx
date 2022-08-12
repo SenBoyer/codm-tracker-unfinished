@@ -24,7 +24,7 @@ function LoadingCircle({ demascusPercent }) {
   //   console.log(color);
   // }, [size]);
 
-  let { count, damascusPercent } = useContext(damascusProgress);
+  let { count } = useContext(damascusProgress);
 
   return (
     <div className="circle-wrap">
